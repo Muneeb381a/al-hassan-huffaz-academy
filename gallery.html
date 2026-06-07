@@ -1,0 +1,583 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | AlHassan Huffaz Academy — Sialkot</title>
+  <meta name="description" content="Browse photos from AlHassan Huffaz Academy — campus life, Hifz completion ceremonies, academic events, and more from Sialkot, Punjab." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:locale"      content="ur_PK" />
+  <meta property="og:site_name"   content="AlHassan Huffaz Academy" />
+  <meta property="og:title"       content="Gallery | AlHassan Huffaz Academy — Sialkot" />
+  <meta property="og:description" content="Photos of AlHassan Huffaz Academy — campus life, Hifz classes, academic sessions, and student events in Sialkot." />
+  <meta property="og:url"         content="https://alhassanacademy.pk/gallery.html" />
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="Gallery | AlHassan Huffaz Academy — Sialkot" />
+  <meta name="twitter:description" content="Photos of AlHassan Huffaz Academy — campus life, Hifz classes, academic sessions, and student events in Sialkot." 
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-icon" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="22" fill="rgba(255,255,255,0.08)" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+          <path d="M9 30V17c0 0 6-3 13-3s13 3 13 3v13c0 0-6-2-13-2S9 30 9 30z" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/>
+          <line x1="22" y1="14" x2="22" y2="28" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M16 20c0 0 2-0.8 6-0.8s6 0.8 6 0.8" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+          <path d="M30 11a4.5 4.5 0 1 1-4 4 3.2 3.2 0 0 0 4-4z" fill="#C9A84C"/>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-name">AlHassan Huffaz Academy</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hifz.html">Hifz</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="admissions.html" class="nav-cta">داخلہ فارم</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-overlay"></div>
+  <nav class="nav-drawer">
+    <a href="index.html">Home</a>
+    <a href="hifz.html">Hifz Program</a>
+    <a href="academics.html">Academics</a>
+    <a href="about.html">About</a>
+    <a href="admissions.html">Admissions</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="admissions.html" class="btn btn-gold">داخلہ فارم — Apply Now</a>
+  </nav>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="gal-hero">
+      <canvas id="heroCanvas" class="hero-canvas"></canvas>
+      <div class="gal-hero-glow"></div>
+
+      <div class="container gal-hero-inner">
+
+        <div class="gal-hero-badge reveal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Academy Gallery
+        </div>
+
+        <div class="gal-hero-ornament reveal">
+          <span class="orn-line"></span>
+          <span class="orn-diamond"></span>
+          <span class="orn-line r"></span>
+        </div>
+
+        <p class="gal-hero-arabic reveal" lang="ar">﴿ وَفِي ذَٰلِكَ فَلْيَتَنَافَسِ الْمُتَنَافِسُونَ ﴾</p>
+        <p class="gal-hero-ayat-en reveal">"For this let the competitors compete." — Al-Mutaffifin: 26</p>
+
+        <h1 class="gal-hero-title reveal">Moments of <em>Faith &amp; Learning</em></h1>
+        <p class="gal-hero-sub reveal">Campus Life &nbsp;·&nbsp; Events &nbsp;·&nbsp; Hifz Completions &nbsp;·&nbsp; Classes</p>
+
+        <div class="gal-hero-btns reveal">
+          <a href="#gallery-grid" class="btn btn-gold">Browse Gallery →</a>
+          <a href="admissions.html" class="btn btn-outline-white">Apply Now</a>
+        </div>
+
+        <div class="gal-scroll-indicator reveal">
+          <span></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== FILTER TABS ===== -->
+    <section class="gal-filter-section" id="gallery-grid">
+      <div class="container">
+
+        <div class="gal-filter-header reveal">
+          <h2>Our <em>Gallery</em></h2>
+          <p>A window into daily life, celebrations, and achievements at AlHassan Huffaz Academy.</p>
+        </div>
+
+        <div class="gal-filter-tabs reveal">
+          <button class="gal-tab active" data-filter="all">All Photos</button>
+          <button class="gal-tab" data-filter="campus">Campus</button>
+          <button class="gal-tab" data-filter="hifz">Hifz Completion</button>
+          <button class="gal-tab" data-filter="events">Events</button>
+          <button class="gal-tab" data-filter="classes">Classes</button>
+        </div>
+
+        <!-- ===== MASONRY GRID ===== -->
+        <div class="gal-grid" id="galGrid">
+
+          <!-- Campus -->
+          <div class="gal-item campus tall" data-category="campus">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#1A4731 0%,#2d6a4f 100%);">
+                <div class="gal-ph-icon">🕌</div>
+                <div class="gal-ph-label">Main Building</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge campus">Campus</span>
+              <p>Main Academy Building — Rangpura, Sialkot</p>
+            </div>
+          </div>
+
+          <div class="gal-item classes" data-category="classes">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#0F1F3D 0%,#1e3a6b 100%);">
+                <div class="gal-ph-icon">📚</div>
+                <div class="gal-ph-label">Classroom</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge classes">Classes</span>
+              <p>Class 7 — English session in progress</p>
+            </div>
+          </div>
+
+          <div class="gal-item hifz wide" data-category="hifz">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#C9A84C 0%,#a07820 100%);">
+                <div class="gal-ph-icon">🏅</div>
+                <div class="gal-ph-label">Hifz Ceremony 2024</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge hifz">Hifz Completion</span>
+              <p>Annual Hifz Completion Ceremony — Class of 2024</p>
+            </div>
+          </div>
+
+          <div class="gal-item events" data-category="events">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#2d6a4f 0%,#52b788 100%);">
+                <div class="gal-ph-icon">🌙</div>
+                <div class="gal-ph-label">Ramadan Program</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge events">Events</span>
+              <p>Ramadan Taraweeh & Quran Review Program</p>
+            </div>
+          </div>
+
+          <div class="gal-item campus" data-category="campus">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#1A4731 0%,#40916c 100%);">
+                <div class="gal-ph-icon">🏫</div>
+                <div class="gal-ph-label">Library</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge campus">Campus</span>
+              <p>Academy Library — Islamic & Academic Resources</p>
+            </div>
+          </div>
+
+          <div class="gal-item hifz tall" data-category="hifz">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#7a5c00 0%,#C9A84C 100%);">
+                <div class="gal-ph-icon">🎓</div>
+                <div class="gal-ph-label">Graduation</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge hifz">Hifz Completion</span>
+              <p>Hafiz Certification — Proud graduates with their families</p>
+            </div>
+          </div>
+
+          <div class="gal-item classes wide" data-category="classes">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#0F1F3D 0%,#2c4a8c 100%);">
+                <div class="gal-ph-icon">🔬</div>
+                <div class="gal-ph-label">Science Lab</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge classes">Classes</span>
+              <p>Science practical session — Class 9</p>
+            </div>
+          </div>
+
+          <div class="gal-item events" data-category="events">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#4a1942 0%,#8a2be2 60%, #c084fc 100%);">
+                <div class="gal-ph-icon">🏆</div>
+                <div class="gal-ph-label">Prize Distribution</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge events">Events</span>
+              <p>Annual Prize Distribution Ceremony 2023</p>
+            </div>
+          </div>
+
+          <div class="gal-item campus" data-category="campus">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#1b4332 0%,#2d6a4f 100%);">
+                <div class="gal-ph-icon">⛲</div>
+                <div class="gal-ph-label">Courtyard</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge campus">Campus</span>
+              <p>Academy courtyard — students during break</p>
+            </div>
+          </div>
+
+          <div class="gal-item hifz" data-category="hifz">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#5c3d00 0%,#d4a017 100%);">
+                <div class="gal-ph-icon">📖</div>
+                <div class="gal-ph-label">Hifz Class</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge hifz">Hifz Completion</span>
+              <p>Morning Hifz revision session with Ustaz</p>
+            </div>
+          </div>
+
+          <div class="gal-item events tall" data-category="events">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#2c3e50 0%,#3498db 100%);">
+                <div class="gal-ph-icon">🎤</div>
+                <div class="gal-ph-label">Speech Competition</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge events">Events</span>
+              <p>Inter-academy Islamic Speech Competition 2024</p>
+            </div>
+          </div>
+
+          <div class="gal-item classes" data-category="classes">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#1a2a6c 0%,#b21f1f 50%, #fdbb2d 100%);">
+                <div class="gal-ph-icon">✏️</div>
+                <div class="gal-ph-label">Exam Hall</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge classes">Classes</span>
+              <p>Annual board examination — Class 8 students</p>
+            </div>
+          </div>
+
+          <div class="gal-item campus wide" data-category="campus">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#1A4731 0%,#52b788 100%);">
+                <div class="gal-ph-icon">🕋</div>
+                <div class="gal-ph-label">Prayer Hall</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge campus">Campus</span>
+              <p>Prayer hall — Salah and Quran tilawat</p>
+            </div>
+          </div>
+
+          <div class="gal-item hifz" data-category="hifz">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#b8860b 0%,#ffd700 100%);">
+                <div class="gal-ph-icon">🌟</div>
+                <div class="gal-ph-label">Ijazah Award</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge hifz">Hifz Completion</span>
+              <p>Sanad & Ijazah awarded — Class of 2023</p>
+            </div>
+          </div>
+
+          <div class="gal-item events" data-category="events">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#134e5e 0%,#71b280 100%);">
+                <div class="gal-ph-icon">🤝</div>
+                <div class="gal-ph-label">Parent Day</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge events">Events</span>
+              <p>Parents' Meet & Progress Review Day</p>
+            </div>
+          </div>
+
+          <div class="gal-item classes tall" data-category="classes">
+            <div class="gal-img-wrap">
+              <div class="gal-placeholder" style="background: linear-gradient(135deg,#001f3f 0%,#005f73 100%);">
+                <div class="gal-ph-icon">🗺️</div>
+                <div class="gal-ph-label">Geography</div>
+              </div>
+            </div>
+            <div class="gal-overlay">
+              <span class="gal-cat-badge classes">Classes</span>
+              <p>Geography lesson — interactive map activity, Class 6</p>
+            </div>
+          </div>
+
+        </div><!-- /gal-grid -->
+
+        <div class="gal-empty-msg" id="galEmpty" style="display:none;">
+          <p>No photos in this category yet. Check back soon!</p>
+        </div>
+
+        <div class="gal-load-more reveal">
+          <p class="gal-count-text">Showing <span id="galVisible">16</span> of <span id="galTotal">16</span> photos</p>
+          <button class="btn btn-outline-green" id="loadMoreBtn" style="display:none;">Load More Photos</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== VIDEO SECTION ===== -->
+    <section class="gal-video-section">
+      <div class="container">
+        <div class="gal-video-inner reveal">
+          <div class="eyebrow gold">In Motion</div>
+          <h2>See Academy <em>Life in Video</em></h2>
+          <p>Watch highlights from our Hifz graduation ceremonies and campus events.</p>
+          <div class="gal-video-placeholder">
+            <div class="gal-video-icon">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <p>Video highlights coming soon — follow us on social media for updates</p>
+            <div class="gal-video-social">
+              <a href="#" class="gal-social-btn fb">Facebook</a>
+              <a href="#" class="gal-social-btn ig">Instagram</a>
+              <a href="#" class="gal-social-btn yt">YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="gal-cta-section">
+      <div class="container">
+        <div class="gal-cta-inner reveal">
+          <div class="gal-cta-arabic" lang="ar">﴿ طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَىٰ كُلِّ مُسْلِمٍ ﴾</div>
+          <h2>Your Child's Story <em>Begins Here</em></h2>
+          <p>Join hundreds of families who have trusted AlHassan Huffaz Academy with their children's Islamic and academic education.</p>
+          <div class="gal-cta-btns">
+            <a href="admissions.html" class="btn btn-gold btn-lg">Apply for Admissions →</a>
+            <a href="https://wa.me/923017393311?text=Assalamu+Alaikum%2C+I+saw+the+gallery+and+would+like+more+information+about+AlHassan+Huffaz+Academy." class="btn btn-outline-white btn-lg" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <svg class="logo-icon" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="22" fill="rgba(255,255,255,0.06)" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+            <path d="M9 30V17c0 0 6-3 13-3s13 3 13 3v13c0 0-6-2-13-2S9 30 9 30z" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/>
+            <line x1="22" y1="14" x2="22" y2="28" stroke="#C9A84C" stroke-width="1.5"/>
+            <path d="M16 20c0 0 2-0.8 6-0.8s6 0.8 6 0.8" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+            <path d="M30 11a4.5 4.5 0 1 1-4 4 3.2 3.2 0 0 0 4-4z" fill="#C9A84C"/>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-name">AlHassan Huffaz Academy</span>
+          </div>
+        </a>
+        <p class="footer-tagline">Nurturing Huffaz and scholars in the heart of Sialkot since 2009.</p>
+        <p class="footer-address">Mohalla Pura Heeran, Near Ali Filter<br>Rangpura, Sialkot, Punjab, Pakistan</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="hifz.html">Hifz</a></li>
+          <li><a href="academics.html">Academic Classes</a></li>
+          <li><a href="about.html">About Academy</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+923086300470">0308-6300470</a></li>
+          <li><a href="https://wa.me/923017393311" target="_blank" rel="noopener">WhatsApp: 0301-7393311</a></li>
+          <li>Mon – Sat: 8:00 AM – 3:00 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 AlHassan Huffaz Academy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/923017393311?text=Assalamu+Alaikum%2C+I+would+like+to+know+more+about+AlHassan+Huffaz+Academy." class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- LIGHTBOX -->
+  <div class="gal-lightbox" id="galLightbox" aria-modal="true" role="dialog" aria-label="Photo lightbox">
+    <button class="gal-lb-close" id="galLbClose" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="gal-lb-prev" id="galLbPrev" aria-label="Previous photo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="gal-lb-next" id="galLbNext" aria-label="Next photo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="gal-lb-content">
+      <div class="gal-lb-visual" id="galLbVisual"></div>
+      <div class="gal-lb-info">
+        <span class="gal-lb-cat" id="galLbCat"></span>
+        <p class="gal-lb-caption" id="galLbCaption"></p>
+        <p class="gal-lb-counter" id="galLbCounter"></p>
+      </div>
+    </div>
+  </div>
+  <div class="gal-lb-backdrop" id="galLbBackdrop"></div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ===== GALLERY FILTER =====
+    const tabs = document.querySelectorAll('.gal-tab');
+    const items = Array.from(document.querySelectorAll('.gal-item'));
+    const emptyMsg = document.getElementById('galEmpty');
+    const visSpan = document.getElementById('galVisible');
+    const totalSpan = document.getElementById('galTotal');
+
+    function filterGallery(cat) {
+      let count = 0;
+      items.forEach(item => {
+        const match = cat === 'all' || item.dataset.category === cat;
+        item.style.display = match ? '' : 'none';
+        if (match) count++;
+      });
+      emptyMsg.style.display = count === 0 ? 'block' : 'none';
+      if (visSpan) visSpan.textContent = count;
+      if (totalSpan) totalSpan.textContent = count;
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        filterGallery(tab.dataset.filter);
+      });
+    });
+
+    filterGallery('all');
+
+    // ===== LIGHTBOX =====
+    const lightbox = document.getElementById('galLightbox');
+    const backdrop = document.getElementById('galLbBackdrop');
+    const lbClose = document.getElementById('galLbClose');
+    const lbPrev = document.getElementById('galLbPrev');
+    const lbNext = document.getElementById('galLbNext');
+    const lbVisual = document.getElementById('galLbVisual');
+    const lbCat = document.getElementById('galLbCat');
+    const lbCaption = document.getElementById('galLbCaption');
+    const lbCounter = document.getElementById('galLbCounter');
+
+    let currentIndex = 0;
+    let activeItems = [];
+
+    function getActiveItems() {
+      return items.filter(i => i.style.display !== 'none');
+    }
+
+    function openLightbox(index) {
+      activeItems = getActiveItems();
+      currentIndex = index;
+      renderLightbox();
+      lightbox.classList.add('open');
+      backdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      backdrop.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function renderLightbox() {
+      const item = activeItems[currentIndex];
+      if (!item) return;
+      const ph = item.querySelector('.gal-placeholder');
+      const overlay = item.querySelector('.gal-overlay');
+      const catBadge = item.querySelector('.gal-cat-badge');
+      const caption = overlay ? overlay.querySelector('p') : null;
+
+      lbVisual.style.cssText = '';
+      lbVisual.innerHTML = '';
+
+      if (ph) {
+        const clone = ph.cloneNode(true);
+        lbVisual.appendChild(clone);
+      }
+
+      lbCat.textContent = catBadge ? catBadge.textContent : '';
+      lbCat.className = 'gal-lb-cat ' + (catBadge ? catBadge.className.replace('gal-cat-badge','').trim() : '');
+      lbCaption.textContent = caption ? caption.textContent : '';
+      lbCounter.textContent = `${currentIndex + 1} / ${activeItems.length}`;
+    }
+
+    items.forEach((item, idx) => {
+      item.addEventListener('click', () => {
+        activeItems = getActiveItems();
+        const activeIdx = activeItems.indexOf(item);
+        if (activeIdx !== -1) openLightbox(activeIdx);
+      });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    backdrop.addEventListener('click', closeLightbox);
+
+    lbPrev.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + activeItems.length) % activeItems.length;
+      renderLightbox();
+    });
+
+    lbNext.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % activeItems.length;
+      renderLightbox();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lbPrev.click();
+      if (e.key === 'ArrowRight') lbNext.click();
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
