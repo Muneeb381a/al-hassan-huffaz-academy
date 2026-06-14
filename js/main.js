@@ -6,14 +6,18 @@
   const canvas = document.getElementById('heroCanvas');
   if (!canvas) return;
 
-  const ctx = canvas.getContext('2d');
+  const ctx  = canvas.getContext('2d');
+  const hero = canvas.parentElement;
   let particles = [];
   let W, H;
+  let mouse = { x: -9999, y: -9999 };
 
-  const COUNT        = 90;
-  const MAX_DIST     = 130;
-  const GOLD         = '201,168,76';
-  const WHITE        = '255,255,255';
+  const COUNT       = 130;
+  const MAX_DIST    = 170;
+  const MOUSE_DIST  = 200;
+  const REPEL_DIST  = 70;
+  const GOLD        = '255,213,0';
+  const WHITE       = '255,255,255';
 
   function resize() {
     W = canvas.width  = canvas.offsetWidth;
@@ -21,15 +25,39 @@
   }
 
   function Particle() {
-    this.x  = Math.random() * W;
-    this.y  = Math.random() * H;
-    this.vx = (Math.random() - 0.5) * 0.35;
-    this.vy = (Math.random() - 0.5) * 0.35;
-    this.r  = Math.random() * 1.2 + 0.4;
-    this.gold = Math.random() > 0.5;
+    this.x    = Math.random() * W;
+    this.y    = Math.random() * H;
+    this.vx   = (Math.random() - 0.5) * 0.55;
+    this.vy   = (Math.random() - 0.5) * 0.55;
+    this.r    = Math.random() * 1.8 + 0.7;
+    this.gold = Math.random() > 0.42;
   }
 
   Particle.prototype.update = function () {
+    const dx   = this.x - mouse.x;
+    const dy   = this.y - mouse.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist < MOUSE_DIST && dist > 0) {
+      const force = (MOUSE_DIST - dist) / MOUSE_DIST;
+      if (dist < REPEL_DIST) {
+        this.vx += (dx / dist) * force * 1.2;
+        this.vy += (dy / dist) * force * 1.2;
+      } else {
+        this.vx -= (dx / dist) * force * 0.12;
+        this.vy -= (dy / dist) * force * 0.12;
+      }
+    }
+
+    this.vx *= 0.97;
+    this.vy *= 0.97;
+
+    const spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+    if (spd < 0.08) {
+      this.vx += (Math.random() - 0.5) * 0.12;
+      this.vy += (Math.random() - 0.5) * 0.12;
+    }
+
     this.x += this.vx;
     this.y += this.vy;
     if (this.x < 0 || this.x > W) this.vx *= -1;
@@ -37,11 +65,23 @@
   };
 
   Particle.prototype.draw = function () {
+    const dx   = this.x - mouse.x;
+    const dy   = this.y - mouse.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    const glow = dist < MOUSE_DIST ? (MOUSE_DIST - dist) / MOUSE_DIST : 0;
+
+    if (glow > 0.25) {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r * 4, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${GOLD},${glow * 0.18})`;
+      ctx.fill();
+    }
+
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.arc(this.x, this.y, this.r + glow * 1.5, 0, Math.PI * 2);
     ctx.fillStyle = this.gold
-      ? 'rgba(' + GOLD  + ',0.55)'
-      : 'rgba(' + WHITE + ',0.25)';
+      ? `rgba(${GOLD},${0.72 + glow * 0.28})`
+      : `rgba(${WHITE},${0.48 + glow * 0.3})`;
     ctx.fill();
   };
 
@@ -53,28 +93,67 @@
   function draw() {
     ctx.clearRect(0, 0, W, H);
 
-    // Draw connections
     for (let i = 0; i < particles.length; i++) {
+      // Particle-to-particle connections
       for (let j = i + 1; j < particles.length; j++) {
         const dx   = particles[i].x - particles[j].x;
         const dy   = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist > MAX_DIST) continue;
-
-        const alpha = (1 - dist / MAX_DIST) * 0.18;
+        const alpha = (1 - dist / MAX_DIST) * 0.38;
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = 'rgba(' + GOLD + ',' + alpha + ')';
-        ctx.lineWidth   = 0.6;
+        ctx.strokeStyle = `rgba(${GOLD},${alpha})`;
+        ctx.lineWidth = 0.75;
+        ctx.stroke();
+      }
+
+      // Particle-to-mouse connections
+      const mx   = particles[i].x - mouse.x;
+      const my   = particles[i].y - mouse.y;
+      const mdist = Math.sqrt(mx * mx + my * my);
+      if (mdist < MOUSE_DIST) {
+        const alpha = (1 - mdist / MOUSE_DIST) * 0.55;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(${GOLD},${alpha})`;
+        ctx.lineWidth = 0.8;
         ctx.stroke();
       }
     }
 
-    // Draw dots
+    // Mouse glow aura
+    if (mouse.x > 0 && mouse.x < W) {
+      const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 100);
+      grad.addColorStop(0, `rgba(${GOLD},0.1)`);
+      grad.addColorStop(0.5, `rgba(${GOLD},0.04)`);
+      grad.addColorStop(1, 'transparent');
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 100, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+
     particles.forEach(p => { p.update(); p.draw(); });
     requestAnimationFrame(draw);
   }
+
+  // Listen on hero section so canvas pointer-events:none stays intact
+  hero.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  hero.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+
+  hero.addEventListener('touchmove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.touches[0].clientX - rect.left;
+    mouse.y = e.touches[0].clientY - rect.top;
+  }, { passive: true });
+  hero.addEventListener('touchend', () => { mouse.x = -9999; mouse.y = -9999; });
 
   window.addEventListener('resize', () => { resize(); init(); });
   resize();

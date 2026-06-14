@@ -1,4 +1,4 @@
-/* =============================================
+﻿/* =============================================
    CONTACT PAGE — PREMIUM STYLES
    ============================================= */
 
@@ -13,8 +13,14 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(155deg,
-    #071510 0%, #0d2318 28%, #1A4731 55%, #122f21 76%, #060d16 100%
+  background: linear-gradient(150deg,
+    #001233 0%,
+    #00296b 22%,
+    #003f88 48%,
+    #00509d 62%,
+    #003f88 78%,
+    #00296b 90%,
+    #001030 100%
   );
 }
 
@@ -32,8 +38,8 @@
   transform: translateX(-50%);
   width: 680px; height: 380px;
   background: radial-gradient(ellipse,
-    rgba(201,168,76,0.12) 0%,
-    rgba(201,168,76,0.04) 45%,
+    rgba(255,213,0,0.13) 0%,
+    rgba(255,213,0,0.04) 45%,
     transparent 70%
   );
   pointer-events: none;
@@ -54,7 +60,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(201,168,76,0.12);
+  background: rgba(255,213,0,0.13);
   border: 1px solid rgba(201,168,76,0.3);
   color: var(--gold);
   font-size: 0.78rem;
@@ -200,7 +206,7 @@
 }
 
 .contact-card.location  .contact-card-icon { background: rgba(26,71,49,0.08);    border: 1px solid rgba(26,71,49,0.14); }
-.contact-card.phone     .contact-card-icon { background: rgba(201,168,76,0.1);   border: 1px solid rgba(201,168,76,0.2); }
+.contact-card.phone     .contact-card-icon { background: rgba(255,213,0,0.11);   border: 1px solid rgba(201,168,76,0.2); }
 .contact-card.whatsapp  .contact-card-icon { background: rgba(37,211,102,0.1);   border: 1px solid rgba(37,211,102,0.2); }
 .contact-card.timings   .contact-card-icon { background: rgba(59,130,246,0.08);  border: 1px solid rgba(59,130,246,0.15);}
 
@@ -276,7 +282,7 @@
   position: absolute;
   top: -80px; right: -80px;
   width: 320px; height: 320px;
-  background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,213,0,0.11) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -358,7 +364,7 @@
   margin-top: 2px;
 }
 .msp-row-icon.loc   { background: rgba(26,71,49,0.5);   border: 1px solid rgba(201,168,76,0.2); color: var(--gold); }
-.msp-row-icon.phone { background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25); color: var(--gold); }
+.msp-row-icon.phone { background: rgba(255,213,0,0.13); border: 1px solid rgba(201,168,76,0.25); color: var(--gold); }
 .msp-row-icon.wa    { background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.25); color: #25D366; }
 .msp-row-icon.clock { background: rgba(96,165,250,0.1);  border: 1px solid rgba(96,165,250,0.2);  color: #93c5fd; }
 
@@ -425,7 +431,7 @@
   transition: all 0.22s ease;
 }
 .msp-btn-dir:hover {
-  background: rgba(201,168,76,0.1);
+  background: rgba(255,213,0,0.11);
   border-color: var(--gold);
   transform: translateY(-2px);
 }
@@ -519,7 +525,7 @@
 .cf-field textarea:focus {
   border-color: var(--gold);
   background: var(--white);
-  box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+  box-shadow: 0 0 0 3px rgba(255,213,0,0.11);
 }
 
 .cf-field input::placeholder,
@@ -604,7 +610,7 @@
 }
 
 .info-card.green-ic  .info-card-icon { background: rgba(26,71,49,0.08);  border: 1px solid rgba(26,71,49,0.12); }
-.info-card.gold-ic   .info-card-icon { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2); }
+.info-card.gold-ic   .info-card-icon { background: rgba(255,213,0,0.11); border: 1px solid rgba(201,168,76,0.2); }
 .info-card.blue-ic   .info-card-icon { background: rgba(59,130,246,0.08);border: 1px solid rgba(59,130,246,0.15);}
 
 .info-card h4 {
@@ -691,8 +697,8 @@
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255,213,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,213,0,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: grid-shift 20s linear infinite;
 }
@@ -902,3 +908,4 @@
   .contact-card:last-child { border-bottom: none; }
   .msp-info-inner       { padding: 32px 20px; }
 }
+

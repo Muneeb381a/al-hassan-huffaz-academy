@@ -12,12 +12,14 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: linear-gradient(155deg,
-    #071510 0%,
-    #0d2318 25%,
-    #1A4731 55%,
-    #0f2820 75%,
-    #080d1a 100%
+  background: linear-gradient(150deg,
+    #001233 0%,
+    #00296b 22%,
+    #003f88 48%,
+    #00509d 62%,
+    #003f88 78%,
+    #00296b 90%,
+    #001030 100%
   );
 }
 
@@ -26,11 +28,20 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 38%,
-    rgba(201,168,76,0.1) 0%,
-    rgba(201,168,76,0.04) 40%,
-    transparent 70%
-  );
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 35%,
+      rgba(255,213,0,0.12) 0%,
+      rgba(253,197,0,0.04) 45%,
+      transparent 70%
+    ),
+    radial-gradient(ellipse 35% 25% at 15% 75%,
+      rgba(0,41,107,0.7) 0%,
+      transparent 60%
+    ),
+    radial-gradient(ellipse 35% 25% at 85% 15%,
+      rgba(0,63,136,0.5) 0%,
+      transparent 60%
+    );
   pointer-events: none;
 }
 

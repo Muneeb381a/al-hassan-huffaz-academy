@@ -1,4 +1,4 @@
-/* =============================================
+﻿/* =============================================
    ADMISSIONS PAGE — PREMIUM STYLES
    ============================================= */
 
@@ -13,8 +13,14 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(155deg,
-    #060d16 0%, #080f1f 28%, #0F1F3D 55%, #0a1628 76%, #040810 100%
+  background: linear-gradient(150deg,
+    #001233 0%,
+    #00296b 22%,
+    #003f88 48%,
+    #00509d 62%,
+    #003f88 78%,
+    #00296b 90%,
+    #001030 100%
   );
 }
 
@@ -32,8 +38,8 @@
   transform: translateX(-50%);
   width: 720px; height: 420px;
   background: radial-gradient(ellipse,
-    rgba(201,168,76,0.13) 0%,
-    rgba(201,168,76,0.04) 45%,
+    rgba(255,213,0,0.13) 0%,
+    rgba(255,213,0,0.04) 45%,
     transparent 70%
   );
   pointer-events: none;
@@ -54,7 +60,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(201,168,76,0.12);
+  background: rgba(255,213,0,0.13);
   border: 1px solid rgba(201,168,76,0.3);
   color: var(--gold);
   font-size: 0.78rem;
@@ -379,7 +385,7 @@
 .req-dot {
   width: 20px; height: 20px;
   border-radius: 50%;
-  background: rgba(201,168,76,0.12);
+  background: rgba(255,213,0,0.13);
   border: 1.5px solid rgba(201,168,76,0.4);
   flex-shrink: 0;
   display: flex;
@@ -427,8 +433,8 @@
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255,213,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,213,0,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: grid-shift 20s linear infinite;
 }
@@ -446,7 +452,7 @@
 }
 
 .fees-table th {
-  background: rgba(201,168,76,0.1);
+  background: rgba(255,213,0,0.11);
   color: var(--gold);
   font-size: 0.72rem;
   font-weight: 700;
@@ -563,7 +569,7 @@
 }
 
 .date-card.open   .date-icon { background: rgba(34,197,94,0.1); }
-.date-card.test   .date-icon { background: rgba(201,168,76,0.1); }
+.date-card.test   .date-icon { background: rgba(255,213,0,0.11); }
 .date-card.inter  .date-icon { background: rgba(59,130,246,0.1); }
 .date-card.enroll .date-icon { background: rgba(26,71,49,0.08); }
 
@@ -676,7 +682,7 @@
 .form-hl-icon {
   width: 36px; height: 36px;
   border-radius: 10px;
-  background: rgba(201,168,76,0.1);
+  background: rgba(255,213,0,0.11);
   border: 1px solid rgba(201,168,76,0.2);
   display: flex;
   align-items: center;
@@ -758,7 +764,7 @@
 .form-field textarea:focus {
   border-color: var(--gold);
   background: var(--white);
-  box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+  box-shadow: 0 0 0 3px rgba(255,213,0,0.11);
 }
 
 .form-field input::placeholder,
@@ -1029,3 +1035,4 @@
   .dates-grid  { grid-template-columns: 1fr; }
   .adm-cta-btns { flex-direction: column; align-items: center; }
 }
+

@@ -1,4 +1,4 @@
-/* =============================================
+﻿/* =============================================
    ACADEMICS PAGE — PREMIUM STYLES
    ============================================= */
 
@@ -14,7 +14,13 @@
   justify-content: center;
   overflow: hidden;
   background: linear-gradient(150deg,
-    #060d16 0%, #0a1628 25%, #0F1F3D 55%, #0a1a30 78%, #071510 100%
+    #001233 0%,
+    #00296b 22%,
+    #003f88 48%,
+    #00509d 62%,
+    #003f88 78%,
+    #00296b 90%,
+    #001030 100%
   );
 }
 
@@ -32,7 +38,7 @@
   transform: translateX(-50%);
   width: 800px; height: 400px;
   background: radial-gradient(ellipse,
-    rgba(201,168,76,0.1) 0%,
+    rgba(255,213,0,0.11) 0%,
     rgba(15,31,61,0.05) 50%,
     transparent 70%
   );
@@ -55,7 +61,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(201,168,76,0.1);
+  background: rgba(255,213,0,0.11);
   border: 1px solid rgba(201,168,76,0.28);
   color: var(--gold);
   font-size: 0.78rem;
@@ -326,7 +332,7 @@
 .subj-icon.science  { background: rgba(15,31,61,0.1);  color: var(--navy); }
 .subj-icon.science2 { background: rgba(15,31,61,0.08); color: #4a6fa5; }
 .subj-icon.chem     { background: rgba(120,40,0,0.08); color: #8b4513; }
-.subj-icon.english  { background: rgba(201,168,76,0.1);color: #8a6b2a; }
+.subj-icon.english  { background: rgba(255,213,0,0.11);color: #8a6b2a; }
 .subj-icon.urdu     { background: rgba(120,0,60,0.08); color: #7a1a4a; font-family: var(--font-urdu); font-size: 1.3rem; }
 .subj-icon.islamiat { background: rgba(26,71,49,0.08); color: var(--green); font-size: 0.95rem; }
 .subj-icon.pakistan { background: rgba(15,31,61,0.06); font-size: 0.9rem; }
@@ -438,8 +444,8 @@
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255,213,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,213,0,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: grid-shift 20s linear infinite;
 }
@@ -592,7 +598,7 @@
 
 .cal-tag.test  { background: rgba(15,31,61,0.08); color: var(--navy); border-color: rgba(15,31,61,0.15); }
 .cal-tag.exam  { background: rgba(180,60,0,0.08); color: #b43c00;     border-color: rgba(180,60,0,0.2); }
-.cal-tag.board { background: rgba(201,168,76,0.12);color: #8a6b2a;    border-color: rgba(201,168,76,0.3); }
+.cal-tag.board { background: rgba(255,213,0,0.13);color: #8a6b2a;    border-color: rgba(201,168,76,0.3); }
 
 /* ============================================
    FACULTY
@@ -602,8 +608,10 @@
 
 .ac-faculty-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .ac-faculty-card {
@@ -622,12 +630,24 @@
 }
 
 .acf-photo {
-  height: 140px;
+  height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
+
+.acf-photo.has-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.ac-faculty-card:hover .acf-photo.has-photo img { transform: scale(1.04); }
 
 .acf-photo.green { background: linear-gradient(135deg, var(--green-deep), var(--green)); }
 .acf-photo.navy  { background: linear-gradient(135deg, #060d16, #0F1F3D); }
@@ -716,8 +736,8 @@
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255,213,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,213,0,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: grid-shift 20s linear infinite;
 }
@@ -738,7 +758,7 @@
 }
 
 .ac-fee-table thead tr {
-  background: rgba(201,168,76,0.1);
+  background: rgba(255,213,0,0.11);
   border-bottom: 1px solid rgba(201,168,76,0.22);
 }
 
@@ -833,8 +853,8 @@
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255,213,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,213,0,0.04) 1px, transparent 1px);
   background-size: 50px 50px;
   animation: grid-shift 15s linear infinite;
 }
@@ -914,7 +934,6 @@
    ============================================= */
 
 @media (max-width: 1200px) {
-  .ac-faculty-grid { grid-template-columns: repeat(2, 1fr); }
   .subjects-grid   { grid-template-columns: repeat(4, 1fr); }
 }
 
@@ -935,7 +954,6 @@
   .approach-grid   { grid-template-columns: 1fr; }
   .calendar-grid   { grid-template-columns: 1fr; }
   .subjects-grid   { grid-template-columns: repeat(2, 1fr); }
-  .ac-faculty-grid { grid-template-columns: 1fr 1fr; }
   .ac-cta-inner    { grid-template-columns: 1fr; text-align: center; }
   .ac-cta-actions  { align-items: center; flex-direction: row; flex-wrap: wrap; justify-content: center; }
 }
@@ -943,6 +961,7 @@
 @media (max-width: 480px) {
   .grade-subjects  { grid-template-columns: 1fr; }
   .subjects-grid   { grid-template-columns: repeat(2, 1fr); }
-  .ac-faculty-grid { grid-template-columns: 1fr; }
+  .ac-faculty-grid { grid-template-columns: 1fr; max-width: 360px; }
   .ac-hero-urdu    { font-size: 1.8rem; }
 }
+
