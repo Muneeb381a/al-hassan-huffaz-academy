@@ -320,24 +320,48 @@
     <!-- ===== VIDEO SECTION ===== -->
     <section class="gal-video-section">
       <div class="container">
-        <div class="gal-video-inner reveal">
-          <div class="eyebrow gold">In Motion</div>
+        <div class="section-heading reveal">
+          <div class="eyebrow">In Motion</div>
+          <span class="urdu-sub" lang="ur">اکیڈمی کی جھلکیاں</span>
           <h2>See Academy <em>Life in Video</em></h2>
-          <p>Watch highlights from our Hifz graduation ceremonies and campus events.</p>
-          <div class="gal-video-placeholder">
-            <div class="gal-video-icon">
-              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <p>Video highlights coming soon — follow us on social media for updates</p>
-            <div class="gal-video-social">
-              <a href="https://www.facebook.com/people/Al-Hassan-Huffaz-Academy/61590658380614/" class="gal-social-btn fb">Facebook</a>
-              <a href="#" class="gal-social-btn ig">Instagram</a>
-              <a href="#" class="gal-social-btn yt">YouTube</a>
+          <div class="gold-rule"></div>
+          <p>Watch highlights from our Hifz graduation ceremonies and campus events</p>
+        </div>
+        <div class="gal-videos-grid">
+
+          <div class="gal-video-card reveal">
+            <div class="gal-video-thumb" data-video="https://res.cloudinary.com/dko2nywrn/video/upload/v1784051188/VID-20260711-WA0016_jkmhf1.mp4">
+              <img src="https://res.cloudinary.com/dko2nywrn/video/upload/so_2/v1784051188/VID-20260711-WA0016_jkmhf1.jpg" alt="Hifz Completion Ceremony 2026" />
+              <div class="gal-play-overlay">
+                <div class="gal-play-btn">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <span class="gal-vid-label">Hifz Completion Ceremony 2026</span>
             </div>
           </div>
+
+          <div class="gal-video-card reveal">
+            <div class="gal-video-thumb" data-video="https://res.cloudinary.com/dko2nywrn/video/upload/v1784051175/VID-20260702-WA0019_aaxbur.mp4">
+              <img src="https://res.cloudinary.com/dko2nywrn/video/upload/so_2/v1784051175/VID-20260702-WA0019_aaxbur.jpg" alt="Academy Event Highlights" />
+              <div class="gal-play-overlay">
+                <div class="gal-play-btn">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <span class="gal-vid-label">Academy Event Highlights</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
+    <!-- VIDEO MODAL -->
+    <div class="vid-modal" id="vidModal">
+      <button class="vid-modal-close" id="vidModalClose" aria-label="Close">&times;</button>
+      <video class="vid-modal-player" id="vidModalPlayer" controls playsinline></video>
+    </div>
 
     <!-- ===== CTA ===== -->
     <section class="gal-cta-section">
@@ -531,17 +555,20 @@
     function renderLightbox() {
       const item = activeItems[currentIndex];
       if (!item) return;
-      const ph = item.querySelector('.gal-placeholder');
+      const imgEl  = item.querySelector('.gal-img-wrap img');
       const overlay = item.querySelector('.gal-overlay');
       const catBadge = item.querySelector('.gal-cat-badge');
       const caption = overlay ? overlay.querySelector('p') : null;
 
-      lbVisual.style.cssText = '';
+      lbVisual.style.cssText = 'display:flex;align-items:center;justify-content:center;';
       lbVisual.innerHTML = '';
 
-      if (ph) {
-        const clone = ph.cloneNode(true);
-        lbVisual.appendChild(clone);
+      if (imgEl) {
+        const img = new Image();
+        img.src = imgEl.src;
+        img.alt = imgEl.alt;
+        img.style.cssText = 'max-width:100%;max-height:70vh;object-fit:contain;border-radius:10px;display:block;';
+        lbVisual.appendChild(img);
       }
 
       lbCat.textContent = catBadge ? catBadge.textContent : '';
@@ -577,7 +604,119 @@
       if (e.key === 'ArrowLeft') lbPrev.click();
       if (e.key === 'ArrowRight') lbNext.click();
     });
+
+    // ===== VIDEO MODAL =====
+    const vidModal  = document.getElementById('vidModal');
+    const vidPlayer = document.getElementById('vidModalPlayer');
+    const vidClose  = document.getElementById('vidModalClose');
+
+    function openVideo(src) {
+      vidPlayer.src = src;
+      vidModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      vidPlayer.play().catch(() => {});
+    }
+
+    function closeVideo() {
+      vidModal.classList.remove('open');
+      vidPlayer.pause();
+      vidPlayer.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.gal-video-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => openVideo(thumb.dataset.video));
+    });
+
+    vidClose.addEventListener('click', closeVideo);
+    vidModal.addEventListener('click', e => { if (e.target === vidModal) closeVideo(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && vidModal.classList.contains('open')) closeVideo(); });
   </script>
+
+  <style>
+    .gal-videos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .gal-video-card { border-radius: 18px; overflow: hidden; }
+    .gal-video-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .gal-video-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .gal-video-thumb:hover img { transform: scale(1.04); }
+    .gal-play-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.3);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s ease;
+    }
+    .gal-video-thumb:hover .gal-play-overlay { background: rgba(0,0,0,0.5); }
+    .gal-play-btn {
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.92);
+      display: flex; align-items: center; justify-content: center;
+      color: #0d1a00;
+      padding-left: 5px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .gal-video-thumb:hover .gal-play-btn {
+      transform: scale(1.12);
+      background: #ffd500;
+    }
+    .gal-vid-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 48px 20px 18px;
+      background: linear-gradient(to top, rgba(0,0,0,0.82), transparent);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    /* Video Modal */
+    .vid-modal {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.96);
+      z-index: 3000;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .vid-modal.open { opacity: 1; pointer-events: all; }
+    .vid-modal-player {
+      max-width: 92vw; max-height: 82vh;
+      border-radius: 14px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.8);
+      outline: none;
+    }
+    .vid-modal-close {
+      position: absolute; top: 20px; right: 24px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff; font-size: 1.6rem;
+      width: 46px; height: 46px;
+      border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+      line-height: 1;
+    }
+    .vid-modal-close:hover { background: rgba(255,255,255,0.22); }
+    @media (max-width: 768px) {
+      .gal-videos-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+  </style>
 </body>
 </html>
 
